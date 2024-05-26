@@ -1,0 +1,56 @@
+* {
+    margin: 0px 3px;
+    padding: 0px;
+    font-family: Helvetica;
+}
+
+h1 {
+    color: khaki;
+    font-size: 100px;
+    text-align: center;
+}
+
+#head-section {
+    margin: 50px auto;
+    background-image: url("../media/pattern.jpeg");
+    background-size: cover;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.green-background {
+    background-color: mediumspringgreen;
+}
+
+.coral-background {
+    background-color: lightcoral;
+}
+
+.blue-background {
+    background-color: skyblue;
+}
+
+.img {
+    margin-top: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.blue-span {
+    color: blue;
+    font-weight: bold;
+}
+
+.major-section {
+    margin-bottom: 30px;
+}
