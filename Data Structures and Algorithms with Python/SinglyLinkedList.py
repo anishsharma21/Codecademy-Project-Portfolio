@@ -1,6 +1,6 @@
 from Node import Node
 
-class LinkedList:
+class SinglyLinkedList:
   def __init__(self, value=None):
     self.head_node = Node(value)
   
@@ -33,12 +33,4 @@ class LinkedList:
           current_node = None
         else:
           current_node = next_node
-
-ll = LinkedList(5)
-ll.insert_beginning(70)
-ll.insert_beginning(5675)
-ll.insert_beginning(90)
-print(ll.stringify_list())
-ll.remove_node(5)
-print(ll.stringify_list())
       
