@@ -7,7 +7,7 @@ def merge_sort(arr):
     if len(right) != 1:
         right = merge_sort(right)
     temp_arr = []
-    while len(left) > 0 and len(right) > 0:
+    while left and right:
         if left[0] > right[0]:
             temp_arr.append(right[0])
             right.pop(0)
