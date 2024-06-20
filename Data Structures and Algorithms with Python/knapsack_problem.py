@@ -15,25 +15,28 @@ def recursive_knapsack(weight_cap, weights, values, i):
 
 def dynamic_knapsack(weight_cap, weights, values):
   global count
-  rows = len(weights) + 1
-  cols = weight_cap + 1
-  matrix = [ [] for x in range(rows) ]
-
-  for index in range(rows):
-    matrix[index] = [ -1 for y in range(cols) ]
-    for weight in range(cols):
+  number_of_items = len(weights) + 1
+  all_weights = weight_cap + 1
+  matrix = [ [] for _ in range(number_of_items) ]
+  
+  # rows are the item number, cols are weight_cap, and values are the total value for number of items and weigh_cap
+  # optimal is highest weight cap and maximum number of items, i.e., bottom right of matrix
+  # but i also have no clue what is going on
+  for item in range(number_of_items):
+    matrix[item] = [ -1 for _ in range(all_weights) ]
+    for weight in range(all_weights):
       count += 1
-      if index == 0 or weight == 0:
-        matrix[index][weight] = 0
-      elif weights[index - 1] <= weight:
-        include_item = values[index - 1] + matrix[index - 1][weight - weights[index - 1]]
+      if item == 0 or weight == 0:
+        matrix[item][weight] = 0
+      elif weights[item - 1] <= weight:
+        include_item = values[item - 1] + matrix[item - 1][weight - weights[item - 1]]
 
-        exclude_item = matrix[index - 1][weight]
+        exclude_item = matrix[item - 1][weight]
 
-        matrix[index][weight] = max(include_item, exclude_item)
+        matrix[item][weight] = max(include_item, exclude_item)
       else:
-        matrix[index][weight] = matrix[index - 1][weight]
-  return matrix[rows-1][weight_cap]
+        matrix[item][weight] = matrix[number_of_items - 1][weight]
+  return matrix[number_of_items-1][weight_cap]
 
 weight_cap = 50
 weights = [31, 10, 20, 19, 4, 3, 6]
